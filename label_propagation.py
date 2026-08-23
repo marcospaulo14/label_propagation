@@ -35,12 +35,21 @@ def rand_label(matrix):
     labels = []
     for i in range(len(matrix)):
         labels[i] = i % max_label
-
+'''
 def rand_vertices(vertices):
     n = len(vertices)
     rand_list = []
     while len(rand) < n:
         rand = random.rand(0, )
+        '''
+
+def rand_vertices(vertices):
+    n = len(vertices)
+    rand_list = []
+    for i in range(n):
+        rand_list.append(i)
+    random.shuffle(rand_list)
+    return rand_list
 
 def label_propagation(matrix, max_iterations):
     vertices = len(matrix)
@@ -51,5 +60,7 @@ def label_propagation(matrix, max_iterations):
 
     while iteration < max_iterations and changed:
         changed = False
-
+        order_vertices = rand_vertices(list(range(vertices)))
+        for i in order_vertices:
+            
 
